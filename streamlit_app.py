@@ -62,8 +62,10 @@ if st.button("Run simulation"):
 st.subheader("Local scan around current θ")
 
 # 스위핑 파라미터 설정
+# span을 만든 이유 :  현재 각도 주변에서 얼마나 넓게 최적각을 찾아볼 것인가?
+# 예: 해바라기가 현재 137.5°로 잎을 배치하고 있는데, ±10° 범위에서 더 좋은 각도가 있는지 확인
 span = st.slider("± span (degrees)", 2.0, 20.0, 10.0, 1.0)  # 현재 각도 기준 ±span 범위
-step = st.slider("step (degrees)", 0.5, 5.0, 1.0, 0.5)      # 스위핑 단계
+step = st.slider("step (degrees)", 0.5, 5.0, 1.0, 0.5)      # 스위핑 단계 : 정밀도를 조절해 가면서 비교하기 위해 설정
 
 # 각도 스위핑 실행 버튼
 if st.button("Scan"):
